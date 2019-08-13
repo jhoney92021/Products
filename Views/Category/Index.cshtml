@@ -1,0 +1,25 @@
+@using Products.Models
+@model List<Category>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">
+        <a asp-action="Index" asp-controller="Product">Products</a>
+        |
+        Categories
+    </h1>
+</div>
+</div>
+    <table class="table">
+        <tr>
+            <td>
+                @{ Html.RenderPartialAsync("CategoryFormPartial", new Category()); }
+            </td>
+            <td>
+                <partial name="CategoryViewPartial" model="Model"/>
+            </td>
+        </tr>
+    </table>
+</div>

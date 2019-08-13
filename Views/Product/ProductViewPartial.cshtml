@@ -1,0 +1,12 @@
+@using Products.Models
+@model List<Product>
+
+<h3>Exsisting Products</h3>
+<ul style="list-style: none;">
+    @foreach(Product product in @Model)
+    {
+        <li>
+            <a asp-action="ViewProduct" asp-controller="Product" asp-route-id="@product.ProductId">@product.Name</a>
+        </li>
+    }
+</ul>

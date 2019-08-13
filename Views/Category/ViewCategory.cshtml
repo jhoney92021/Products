@@ -1,0 +1,33 @@
+@using Products.Models
+@model ProductsNCategories
+
+<div>
+    <h3>@Model.category.Name</h3>
+</div>
+
+</div>
+<table class="table">
+    <tr>
+        <td>
+            <h3>Products:</h3> 
+            @foreach(var product in @Model.category.Accociated)
+            {
+                @product.AccociatedProducts.Name
+                <br>
+            }
+        </td>
+        <td>
+            <h3>Add Product</h3>
+            <form asp-action="AddProduct" asp-controller="Category" asp-route-id="@Model.category.CategoryId">
+                <select name="productId" id="">
+                    @foreach(Product product in Model.Products)
+                    {
+                        <option value="@product.ProductId">@product.Name</option>                        
+                    }
+                </select>
+                <input type="submit" value="Add">
+            </form>
+        </td>
+    </tr>
+</table>
+</div>

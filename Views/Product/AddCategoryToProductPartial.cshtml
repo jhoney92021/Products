@@ -1,0 +1,13 @@
+@using Products.Models
+@model ProductsNCategories
+
+<h3>Add Category</h3>
+<form asp-action="AddCategory" asp-controller="Product" asp-route-id="@Model.product.ProductId">
+    <select name="categoryId" id="">
+        @foreach(Category cat in Model.Categories)
+        {
+            <option value="@cat.CategoryId">@cat.Name</option>
+        }
+    </select>
+    <input type="submit" value="Add">
+</form>

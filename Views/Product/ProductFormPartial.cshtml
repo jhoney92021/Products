@@ -1,0 +1,20 @@
+@using Products.Models
+@model Product
+
+<h3>New Product</h3>
+<form asp-action="Create" asp-controller="Product" method="POST">
+        <label asp-for="Name"></label>
+        <br>
+        <input asp-for="Name">
+        <br>
+        <label asp-for="Description"></label>
+        <br>
+        <input asp-for="Description">
+        <br>
+        <label asp-for="Price"></label>
+        <br>
+        <input asp-for="Price">
+        <br>
+        <br>
+        <input type="Submit" value="Create">
+</form>

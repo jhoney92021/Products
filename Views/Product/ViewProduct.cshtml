@@ -1,0 +1,24 @@
+@using Products.Models
+@model ProductsNCategories
+
+<div>
+    <h3>@Model.product.Name</h3>
+</div>
+
+</div>
+<table class="table">
+    <tr>
+        <td>
+            <h3>Categories:</h3>
+            @foreach(var cat in @Model.product.Accociated)
+            {
+                @cat.AccociatedCategories.Name
+                <br>
+            }
+        </td>
+        <td>
+            <partial name="AddCategoryToProductPartial"/> 
+        </td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,10 @@
+@using Products.Models
+@model Category
+
+<h3>New Category</h3>
+<form asp-action="Create" asp-controller="Category" method="POST">
+        <input asp-for="Name">
+        <br>
+        <br>
+        <input type="Submit" value="Create">
+</form>
